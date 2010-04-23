@@ -88,4 +88,13 @@ describe Mongoid::Extensions::Symbol::Inflections do
 
   end
 
+  describe "#near" do
+
+    it 'returns :"foo $near"' do
+      ret = :foo.near
+      ret.key.should == :foo
+      ret.operator.should == "near"
+    end
+  end
+
 end
